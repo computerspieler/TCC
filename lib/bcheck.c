@@ -110,6 +110,11 @@ static void install_malloc_hooks(void);
 static void restore_malloc_hooks(void);
 
 #ifdef CONFIG_TCC_MALLOC_HOOKS
+static void *__malloc_hook;
+static void *__free_hook;
+static void *__realloc_hook;
+static void *__memalign_hook;
+
 static void *saved_malloc_hook;
 static void *saved_free_hook;
 static void *saved_realloc_hook;
